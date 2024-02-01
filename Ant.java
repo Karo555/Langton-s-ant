@@ -3,8 +3,8 @@ import java.util.Random;
 public class Ant {
     Random random= new Random();
     //spawning ant at random location
-    int x= random.nextInt(200);
-    int y= random.nextInt(200);
+    int x= random.nextInt(Config.WIDTH);
+    int y= random.nextInt(Config.HEIGHT);
     //ant's direction
     //0-north, 1-east, 2-south, 3-west
     int direction= random.nextInt(4);
@@ -21,6 +21,11 @@ public class Ant {
         }
         else if (direction==3) {
             x--;
+        }
+        this.x = Math.floorMod(x, Config.WIDTH);
+        this.y = Math.floorMod(y, Config.HEIGHT);
+        if (x == -1 || y == -1) {
+            throw new IndexOutOfBoundsException("What the fuck???");
         }
     }
     //changing direction
