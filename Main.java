@@ -1,8 +1,8 @@
 import processing.core.PApplet;
 
 public class Main extends PApplet {
-    Grid grid= new Grid();
-    Ant ant= new Ant();
+    Grid grid = new Grid();
+    Ant ant = new Ant();
 
     public void settings() {
         size(Config.SIZE_X, Config.SIZE_Y);
@@ -24,12 +24,12 @@ public class Main extends PApplet {
 
     public void step() {
         //ant's movement
-        if (grid.grid[ant.x][ant.y]==0) {
-            grid.grid[ant.x][ant.y]=1;
+        if (grid.grid[ant.x][ant.y] == 0) {
+            grid.grid[ant.x][ant.y] = 1;
             ant.white_tile();
         }
-        else if (grid.grid[ant.x][ant.y]==1) {
-            grid.grid[ant.x][ant.y]=0;
+        else if (grid.grid[ant.x][ant.y] == 1) {
+            grid.grid[ant.x][ant.y] = 0;
             ant.black_tile();
         }
         ant.move_forward();

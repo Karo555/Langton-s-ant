@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Grid {
-    Random random= new Random();
+    Random random = new Random();
     int[][] grid = new int[Config.HEIGHT][Config.WIDTH];
     //creating random grid filled with black/white tiles
     public Grid() {
