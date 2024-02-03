@@ -7,7 +7,7 @@ public class Grid {
     public Grid() {
         for (int i = 0; i < Config.HEIGHT; i++) {
             for (int j = 0; j < Config.WIDTH; j++) {
-                int r = 0;//random.nextInt(2);
+                int r = -1 ;//random.nextInt(2);
                 grid[i][j] = r;
             }
         }

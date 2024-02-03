@@ -1,13 +1,22 @@
 import java.util.Random;
 
 public class Ant {
-    Random random = new Random();
-    //spawning ant at random location
-    int x = random.nextInt(Config.WIDTH);
-    int y = random.nextInt(Config.HEIGHT);
-    //ant's direction
-    //0-north, 1-east, 2-south, 3-west
-    int direction = random.nextInt(4);
+    private int direction;
+    public int id, x, y, r, g, b;
+
+    public Ant(int id, Random random) {
+        this.id = id;
+        // spawning ant at random location
+        this.x = random.nextInt(Config.WIDTH);
+        this.y = random.nextInt(Config.HEIGHT);
+        // ant's direction
+        // 0-north, 1-east, 2-south, 3-west
+        this.direction = random.nextInt(4);
+        // ant's color
+        this.r = 32 + random.nextInt(128);
+        this.g = 32 + random.nextInt(128);
+        this.b = 32 + random.nextInt(128);
+    }
     //movement
     public void move_forward() {
         switch (direction) {
@@ -24,8 +33,8 @@ public class Ant {
         direction = switch (direction) {
             case 0 -> 3;
             case 1 -> 0;
-            case 2 -> 2;
-            case 3 -> 1;
+            case 2 -> 1;
+            case 3 -> 2;
             default -> throw new IllegalStateException("Unexpected value: " + direction);
         };
     }
@@ -36,6 +45,6 @@ public class Ant {
             case 2 -> 3;
             case 3 -> 0;
             default -> throw new IllegalStateException("Unexpected value: " + direction);
-        }
+        };
     }
 }
