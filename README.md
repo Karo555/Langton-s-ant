@@ -1,2 +1,5 @@
 # Langton-s-ant
-Langton's ant simulation in java and processing
+Winter semester 2023/2024 PWr Introduction to Programming project.
+
+Langton's ant simulation written in Java.
+Antimation made in Processing.
